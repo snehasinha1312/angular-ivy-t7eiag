@@ -5,21 +5,16 @@ import {Observable} from "rxjs";
 
 
 const routes: Routes = [
-  {path :'', canActivate:[],children:[
+  //{path :'', canActivate:[],children:[
   {
     path: 'login',
-    loadChildren: './loginModule/LoginModuleComponent'
+   loadChildren: () => import('./login-module/login-module.module').then(m => m.LoginModuleModule)
   },
   {
     path: 'home',
-    loadChildren: './homeModule/HomeModuleComponent'
-  },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
+    loadChildren: () => import('./home-module/home-module.module').then(m => m.HomeModuleModule)
   }
-  ]}
+  //]}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

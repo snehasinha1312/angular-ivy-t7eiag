@@ -8,7 +8,6 @@ import { HomeModuleComponent } from './home-module.component';
 @NgModule({
   declarations: [HomeModuleComponent],
   imports: [
-    NgModule,
     CommonModule,
     HomeModuleRoutingModule
   ]
